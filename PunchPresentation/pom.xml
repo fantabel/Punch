@@ -37,8 +37,8 @@
 					<webResources>
 						<resource>
 							<!-- this is relative to the pom.xml directory -->
-							<directory>resources/</directory>
-							<include>WebContent/index.jsp</include>
+							<directory>resources</directory>
+							<directory>WebContent</directory>
 						</resource>
 					</webResources>
 				</configuration>

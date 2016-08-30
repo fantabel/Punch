@@ -1,7 +1,9 @@
-package com.fantabel.punch.services;
+package com.fantabel.punch.services.implementation;
 
 import javax.ejb.Stateless;
 import javax.jws.WebService;
+
+import com.fantabel.punch.services.ManageTimer;
 
 /**
  * Session Bean implementation class ManageTimer

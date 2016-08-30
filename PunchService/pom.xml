@@ -10,15 +10,6 @@
 	<artifactId>PunchService</artifactId>
 
 	<packaging>ejb</packaging>
-	<dependencies>
-		<dependency>
-			<groupId>com.fantabel.punch</groupId>
-			<artifactId>PunchServiceClient</artifactId>
-			<version>0.0.1</version>
-			<type>ejb-client</type>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
 	<build>
 		<sourceDirectory>ejbModule</sourceDirectory>
 		<plugins>
@@ -27,11 +18,13 @@
 				<version>2.5</version>
 				<configuration>
 					<ejbVersion>3.2</ejbVersion>
-					<archive>
-						<manifestEntries>
-							<Class-Path>PunchServiceClient.jar</Class-Path>
-						</manifestEntries>
-					</archive>
+					<generateClient>true</generateClient>
+					<clientIncludes>
+	                    <clientInclude>com/fantabel/services/*</clientInclude>
+	                </clientIncludes>
+	                <clientExcludes>
+	                    <clientExclude>com/fantabel/services/implementation/*</clientExclude>
+	              </clientExcludes>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -1,6 +1,5 @@
 package com.fantabel.punch.services;
 
-import javax.ejb.Local;
 import javax.ejb.Remote;
 import javax.jws.WebService;
 

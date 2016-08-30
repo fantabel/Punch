@@ -23,6 +23,12 @@
 			<type>ejb-client</type>
 			<classifier>client</classifier>
 		</dependency>
+		<dependency>
+			<groupId>com.fantabel.punch</groupId>
+			<artifactId>PunchPresentation</artifactId>
+			<version>0.0.1</version>
+			<type>war</type>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -30,6 +36,7 @@
 				<artifactId>maven-ear-plugin</artifactId>
 				<version>2.10</version>
 				<configuration>
+				    <finalName>Punch</finalName>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<earSourceDirectory>EarContent</earSourceDirectory>
 					<version>7</version>
@@ -45,8 +52,12 @@
 							<groupId>com.fantabel.punch</groupId>
 							<artifactId>PunchServiceClient</artifactId>
 							<classifier>client</classifier>
-							
 						</ejbClientModule>
+						<webModule>
+						<groupId>com.fantabel.punch</groupId>
+							<artifactId>PunchPresentation</artifactId>
+							<bundleFileName>PunchPresentation.war</bundleFileName> 
+						</webModule>
 					</modules>
 				</configuration>
 			</plugin>

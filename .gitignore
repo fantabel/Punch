@@ -2,3 +2,5 @@
 .recommenders/
 .project
 .settings/
+target/
+.class

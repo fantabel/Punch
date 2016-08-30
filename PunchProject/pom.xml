@@ -13,7 +13,7 @@
 	<modules>
 		<module>../PunchService</module>
 		<module>../PunchEar</module>
-		<module>../PunchServiceClient</module>
+		<!-- <module>../PunchServiceClient</module> -->
 		<module>../PunchPresentation</module>
 	</modules>
 	<dependencies>

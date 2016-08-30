@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.fantabel.punch</groupId>
+		<artifactId>PunchProject</artifactId>
+		<version>0.0.1</version>
+		<relativePath>../PunchProject/pom.xml</relativePath>
+	</parent>
+	<artifactId>PunchEar</artifactId>
+	<packaging>ear</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>com.fantabel.punch</groupId>
+			<artifactId>PunchService</artifactId>
+			<version>0.0.1</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.fantabel.punch</groupId>
+			<artifactId>PunchServiceClient</artifactId>
+			<version>0.0.1</version>
+			<type>ejb-client</type>
+			<classifier>client</classifier>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<earSourceDirectory>EarContent</earSourceDirectory>
+					<version>7</version>
+					<modules>
+						<ejbModule>
+							<groupId>com.fantabel.punch</groupId>
+							<artifactId>PunchService</artifactId>
+							<bundleFileName>PunchService.jar</bundleFileName>
+						</ejbModule>
+						<ejbClientModule>
+							<bundleDir>/</bundleDir>
+							<bundleFileName>PunchServiceClient.jar</bundleFileName>
+							<groupId>com.fantabel.punch</groupId>
+							<artifactId>PunchServiceClient</artifactId>
+							<classifier>client</classifier>
+							
+						</ejbClientModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

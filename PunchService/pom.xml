@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.fantabel.punch</groupId>
+		<artifactId>PunchProject</artifactId>
+		<version>0.0.1</version>
+		<relativePath>../PunchProject/pom.xml</relativePath>
+	</parent>
+	<artifactId>PunchService</artifactId>
+
+	<packaging>ejb</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>com.fantabel.punch</groupId>
+			<artifactId>PunchServiceClient</artifactId>
+			<version>0.0.1</version>
+			<type>ejb-client</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<sourceDirectory>ejbModule</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<ejbVersion>3.2</ejbVersion>
+					<archive>
+						<manifestEntries>
+							<Class-Path>PunchServiceClient.jar</Class-Path>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

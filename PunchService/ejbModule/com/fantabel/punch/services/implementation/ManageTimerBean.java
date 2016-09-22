@@ -14,7 +14,7 @@ public class ManageTimerBean implements ManageTimer {
 
 	@Override
 	public String helloWorld() {
-		return "helloWorld";
+		return "helloWorld2";
 	}
 
 }

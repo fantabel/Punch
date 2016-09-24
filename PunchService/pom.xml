@@ -8,10 +8,27 @@
 		<relativePath>../PunchProject/pom.xml</relativePath>
 	</parent>
 	<artifactId>PunchService</artifactId>
-
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.2.2.Final</version>
+		</dependency>
+	</dependencies>
 	<packaging>ejb</packaging>
 	<build>
 		<sourceDirectory>ejbModule</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>ejbModule/META-INF</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-ejb-plugin</artifactId>
@@ -20,11 +37,11 @@
 					<ejbVersion>3.2</ejbVersion>
 					<generateClient>true</generateClient>
 					<clientIncludes>
-	                    <clientInclude>com/fantabel/services/*</clientInclude>
-	                </clientIncludes>
-	                <clientExcludes>
-	                    <clientExclude>com/fantabel/services/implementation/*</clientExclude>
-	              </clientExcludes>
+						<clientInclude>com/fantabel/services/*</clientInclude>
+					</clientIncludes>
+					<clientExcludes>
+						<clientExclude>com/fantabel/services/implementation/*</clientExclude>
+					</clientExcludes>
 				</configuration>
 			</plugin>
 		</plugins>

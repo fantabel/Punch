@@ -9,19 +9,13 @@
 	</parent>
 	<artifactId>PunchEar</artifactId>
 	<packaging>ear</packaging>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.fantabel.punch</groupId>
 			<artifactId>PunchService</artifactId>
 			<version>0.0.1</version>
 			<type>ejb</type>
-		</dependency>
-		<dependency>
-			<groupId>com.fantabel.punch</groupId>
-			<artifactId>PunchServiceClient</artifactId>
-			<version>0.0.1</version>
-			<type>ejb-client</type>
-			<classifier>client</classifier>
 		</dependency>
 		<dependency>
 			<groupId>com.fantabel.punch</groupId>
@@ -46,15 +40,8 @@
 							<artifactId>PunchService</artifactId>
 							<bundleFileName>PunchService.jar</bundleFileName>
 						</ejbModule>
-						<ejbClientModule>
-							<bundleDir>/</bundleDir>
-							<bundleFileName>PunchServiceClient.jar</bundleFileName>
-							<groupId>com.fantabel.punch</groupId>
-							<artifactId>PunchServiceClient</artifactId>
-							<classifier>client</classifier>
-						</ejbClientModule>
 						<webModule>
-						<groupId>com.fantabel.punch</groupId>
+							<groupId>com.fantabel.punch</groupId>
 							<artifactId>PunchPresentation</artifactId>
 							<bundleFileName>PunchPresentation.war</bundleFileName> 
 						</webModule>

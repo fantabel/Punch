@@ -27,7 +27,7 @@ public class ManageTimerBean implements ManageTimer {
 
 	@Override
 	public String helloWorld() {
-		String DATASOURCE_CONTEXT = "jdbc/AFECoreDS";
+		String DATASOURCE_CONTEXT = "jdbc/PunchDS";
 
 		Connection result = null;
 		String s = null;
@@ -40,7 +40,7 @@ public class ManageTimerBean implements ManageTimer {
 			if (datasource != null) {
 				result = datasource.getConnection();
 				Statement stmnt = result.createStatement();
-				stmnt.execute("select to_char(sysdate, 'YYYY-MM-DD') from dual");
+				stmnt.execute("select 1 + 1 from dual");
 				ResultSet rslt = stmnt.getResultSet();
 				rslt.next();
 				s = rslt.getString(1);

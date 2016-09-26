@@ -41,6 +41,7 @@ public class ManageTimerBean implements ManageTimer {
 		 */
 
 		Event e = new Event();
+		e.setDescription("Hallo");
 		em.persist(e);
 
 		return "helloWorld2 " + e.getId() + "|";
